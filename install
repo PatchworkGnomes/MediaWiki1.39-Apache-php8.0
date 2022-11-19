@@ -1,0 +1,199 @@
+#!/bin/sh
+clear
+
+echo "======================================================================================"
+echo "                                                                                      "
+echo "WWWWWWWWWWWMWWWWMWWWWWWWWMWWWWWWWWWMXkONWWWWMMWWWWMWWWWMWWWWMWWWMWWWWWMWWWWWWWWMWWWWMW"
+echo "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWXl..oXWWWWNKOKNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+echo "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWKOXO'   cXWOd:..cXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+echo "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWK;,OO.   .dx.    cXKxc;c0WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+echo "WWNKK000KKKXWWWNK0K0000KXWWXdo0O' ;d,    :;    .cc.   cKNXK0XNK0000KKKXWWWNX000000KXNW"
+echo "WWO'...';:l0WWWXc....,;cxOkx, .;:,.,c.  .c'   .:,    :xl,...dOo:;'...'kWWWNxc;,....cXW"
+echo "WWx.  'kXNNNWMMK,  .lKNNK; .;;. .,:,::. .c'  .:,   .:;.   .ckkkO0k,  .dWMWWNNNKl.  ;KW"
+echo "WWk.  lNWWWWWWWK;  '0WWWK:   .,:' .:cl:..c' .:;  .::.    .:;..:oONo  .dWWWWWWWW0'  ;XW"
+echo "WWx.  lNWWWWWWWK;  'lloxOd'    .::. ;lllcolcdo;.,c'    .;;..,d0Okxc..,kWWWWWWWW0'  ;KW"
+echo "WWk.  lNWWWWWWWK;  'c.   .:;.   .::.;lc;,'''''';lc'..,;;;;,,,..     .c0WWWWWWWW0'  ;KW"
+echo "WWk.  lNWWWWWWWK;  'kd.    .;;.  ,dl'            .;lo:;;;.        ...,xWWWWWWWW0'  ;XW"
+echo "WWx.  lNWWWWWWMK:..;dko;,..  .;;:c,                .:do;'''',,,;lxl. .dWWWWWWWWO'  ;KW"
+echo "WWk.  lNWWWMWWWO;...   ..,,,,,,cd,                   :d:,'......,::. .xWWWMWWWW0'  ;XW"
+echo "WWx.  lNWWWWWMW0c..         .':xl                    .oc,,,'.      .'.dWWWWWWWWO'  ;KW"
+echo "WWk.  lNWWWWWWWXko:,,,,,,,,''',oc                    .c'  .',,,;:c;.',dWWWWWWWW0'  ;XW"
+echo "WWk.  lNWWWWWWWK:.'''....'',,,,ll.                   'dc..    .,xXo. .dWWWWWWWW0'  ;KW"
+echo "WWx.  lNWWWWWWWK;.;ldo:,,',,,,;cdc                  .c;.',;,'.   cc  .dWWWWWWWW0'  ;KW"
+echo "WWk.  lNWWWWWWWK; ';;,...',,,,,',ll.               'ol.    .',;:,,,  .dWWWWWWWW0'  ;XW"
+echo "WWx.  lNMWWWWMMK, .::,,,'...  .,;;lo:'.         .,lo;,;,'.    .l0Kl  .dWMWWWWMWO'  ;KW"
+echo "WWk.  lNWWWMWWWK;  ;c'.  ..',;,...c;co;,;:;,,;c:lo,,;,..',,,'. .xNo  .dWWWMWWWW0'  ;XW"
+echo "WWx.  lNWWWWWWWK;  'OX0Okl;'.   'c;::.  ;l...'l'.:;  .;;.  .:xOk0No  .dWWWWWWWWO'  ;KW"
+echo "WWk.  cXWWWWWWWK;  .OWWKl.    .;:'::.  .c,   .c' .c,   .col;.:XWWNc  .dWWWWWWWWk.  ;KW"
+echo "WWk.  .;lokXWWWK;   'ox;    .,l;.,c.   ,c.   .c.  'c.   .lXNo:odo:.  .dWWWN0doc'   ;KW"
+echo "WWKoclllclo0WWWXxlclloc..,:okk; .c'   .c'    ;:    ll.   .dNN0dlllcllo0WWWNklllllclxNW"
+echo "WWWWWWMWWWWMWWWWMWWWWWXKXNWXkc:lOl.  .dd.  .:xo.  .xXk;.  :XWWWWMMWWWWMWWWMWWWWMWWWWMW"
+echo "WWWWMWWWWWWWWMWWWWMWWWWMWWWWWNNWNo,;dKNo..,kXNXc .lXWWNOl;oXWWWWWWWMWWWWMWWWWMWWWWWWWW"
+echo "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWXNWWWNKO0XWWWW0dONWWWWWWNNWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+echo "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+echo "                                                                                      "
+echo "======================================================================================"
+
+# Hello
+echo " Attempting to install MediaWiki on RH 8 and Apache "
+echo " ================================================ "
+sleep 2
+
+###############
+## Variables ##
+###############
+
+# You MUST set the Name here:
+# This is NOT the Server Name
+# This is the name that you will enter in the URL
+SERVERNAME=mwiki.Your.Domain
+
+# This is the name of the database that will get created for MediaWiki
+DBNAME=mediawiki
+
+# This is the username that is needed for the MediaWiki database. NOTE: This is not a MediaWiki user account
+USER=wiki_user
+
+# Email for MediaWiki Admin account
+# Doesn't have to be real, but recommend
+APPMAIL=your@email.com
+
+# Email for CertBot 
+# Doesn't have to be real, but recommend
+CERTMAIL=your@email.com
+
+# Color Scheme Fun
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+# This generates a random password for the root account of mariadb. You can change it if you wish
+date +%s | sha256sum | base64 | head -c 16 > /tmp/.MARIADBPASSWORD
+sleep 1 # We need to sleep 1 to change the password, otherwise we end up with the same hash
+
+# This generates a random password for the nextcloud user account in mariadb. You can change it if you wish
+date +%s | sha256sum | base64 | head -c 16 >> /tmp/.APPPASSWORD
+sleep 1 # We need to sleep 1 to change the password, otherwise we end up with the same hash
+
+
+##########################################################################
+############## NO CHANGES FROM HERE DOWN SHOULD BE REQUIRED ##############
+##########################################################################
+#Start in /TMP
+cd /tmp
+
+# Configure Firewall
+echo -e "${green}Set Firewall port 80${reset}"
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+clear 
+
+# Enable PHP 8.0
+echo -e "${green}Activating and Installing php 8.0${reset}"
+sudo dnf module switch-to php:8.0 -y
+sudo dnf module enable php:8.0 -y
+sudo dnf module install php:8.0 -y
+sudo dnf update -y
+
+# Install prerequisites
+echo -e "${green}Installing prerequisite software${reset}"
+sudo dnf install -y httpd php php-mysqlnd php-gd php-xml php-intl mariadb-server mariadb php-mbstring php-json wget curl mlocate php-pecl-apcu php-pear httpd-devel pcre-devel gcc make git-core
+clear
+
+# Enable Extra Repo for CertBot
+echo -e "${green}Enable Extra Repo for CertBot${reset}"
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+echo -e "${green}Done${reset}"
+
+echo -e "${green}Install CertBot${reset}"
+sudo dnf install -y certbot python3-certbot-apache
+echo -e "${green}Done${reset}"
+
+# Start and Enable services
+echo -e "${green}Start and Enable services${reset}"
+sudo systemctl enable --now httpd
+sudo systemctl enable --now mariadb
+
+echo -e "${green}Create a Genaric Virtual host${reset}"
+cat << EOF >> /etc/httpd/conf.d/mediawiki.conf
+<VirtualHost *:80>
+  ServerName $SERVERNAME
+  DocumentRoot /var/www/html/mediawiki
+  <directory /var/www/html/mediawiki>
+    Require all granted
+    AllowOverride All
+    Options FollowSymLinks MultiViews
+    SetEnv HOME /var/www/html/mediawiki
+    SetEnv HTTP_HOME /var/www/html/mediawiki
+  </directory>
+</VirtualHost>
+EOF
+
+#Restart httpd 
+echo -e "${green}Restart Apache${reset}"
+sudo systemctl restart httpd.service
+
+# Setup SQL
+echo -e "${green}Setting up DB\User\Password for MediaWiki${reset}"
+cat << EOF >> /tmp/setup.sql
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$(cat /tmp/.MARIADBPASSWORD)');
+DELETE FROM mysql.user WHERE User='';
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+DROP DATABASE IF EXISTS test;
+DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';
+CREATE DATABASE $DBNAME DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE USER $USER@localhost IDENTIFIED BY '$(cat /tmp/.APPPASSWORD)';
+GRANT ALL PRIVILEGES ON $DBNAME.* TO $USER@localhost;
+FLUSH PRIVILEGES;
+quit
+EOF
+
+mysql -u root < /tmp/setup.sql
+
+# Download and install MediaWiki
+echo -e "${green}Download and install MediaWiki${reset}"
+#wget https://releases.wikimedia.org/mediawiki/1.38/mediawiki-1.38.4.zip -P /tmp/ 
+sudo wget https://releases.wikimedia.org/mediawiki/1.39/mediawiki-1.39.0-rc.1.zip  -P /tmp/
+sudo unzip /tmp/mediawiki-*.zip -d /var/www/html && mv /var/www/html/mediawiki-* /var/www/html/mediawiki
+
+# Set permisions
+sudo chown -R apache:apache /var/www/html/mediawiki
+sudo chmod 755 /var/www/html/mediawiki
+
+# Selinux 
+sudo sudo restorecon -FR /var/www/html/mediawiki/
+
+# Restart Services
+sudo systemctl restart httpd
+clear
+
+# Manual work
+echo -e "${red}To Finish Install ${reset}"
+echo -e "${red}=====================${reset}"
+echo -e "${green}Open an internet browser${reset}"
+echo -e "${green}HTTP://<HOST-IP>${reset}"
+echo ""
+echo -e "${green}DataBase Name: $DBNAME${reset}"
+echo -e "${green}DB User: $USER${reset}"
+echo -e "${green}Password:" $(cat /tmp/.APPPASSWORD) "${reset}"
+echo -e "${green}Admin Email: $APPMAIL${reset}"
+echo ""
+echo ""
+echo -e "${red}Don't Forget to Clean the TMP${reset}"
+echo -e "${red}.APPPASSWORD${reset}"
+echo -e "${red}.MARIADBPASSWORD${reset}"
+echo -e "${red}setup.sql${reset}"
+
+
+# certbot --apache --agree-tos --redirect --uir --hsts --staple-ocsp --must-staple -d $SERVERNAME --email $CERTMAIL
+
+
+# Disable reading by anonymous users
+#$wgGroupPermissions['*']['read'] = false;
+
+
+
+
+
+
