@@ -84,55 +84,83 @@ cd /tmp
 
 # Configure Firewall
 echo -e "${green}Set Firewall port 80${reset}"
-sudo firewall-cmd --permanent --zone=public --add-service=http
-sudo firewall-cmd --permanent --zone=public --add-service=https
-sudo firewall-cmd --reload
+firewall-cmd --permanent --zone=public --add-service=http
+echo -e "${green}Set Firewall port 443${reset}"
+firewall-cmd --permanent --zone=public --add-service=https
+echo -e "${green}Firewall Reload${reset}"
+firewall-cmd --reload
 clear 
 
 # Enable PHP 8.0
 echo -e "${green}Activating and Installing php 8.0${reset}"
-sudo dnf module switch-to php:8.0 -y
-sudo dnf module enable php:8.0 -y
-sudo dnf module install php:8.0 -y
-sudo dnf update -y
+dnf module switch-to php:8.0 -y
+dnf module enable php:8.0 -y
+dnf module install php:8.0 -y
+dnf update -y
 
 # Install prerequisites
 echo -e "${green}Installing prerequisite software${reset}"
-sudo dnf install -y httpd php php-mysqlnd php-gd php-xml php-intl mariadb-server mariadb php-mbstring php-json wget curl mlocate php-pecl-apcu php-pear httpd-devel pcre-devel gcc make git-core
+dnf install -y httpd php php-mysqlnd php-gd php-xml php-intl mariadb-server mariadb php-mbstring php-json wget curl mlocate php-pecl-apcu php-pear httpd-devel pcre-devel gcc make git-core
 clear
 
 # Enable Extra Repo for CertBot
 echo -e "${green}Enable Extra Repo for CertBot${reset}"
-sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm 
+dnf install certbot python3-certbot-apache -y
 echo -e "${green}Done${reset}"
 
-echo -e "${green}Install CertBot${reset}"
-sudo dnf install -y certbot python3-certbot-apache
-echo -e "${green}Done${reset}"
+# Generate self-signed certificate
+echo -e "${green}Generating Self-Signed Certificate${reset}"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/tls/private/apache-selfsigned.key -out /etc/pki/tls/certs/apache-selfsigned.crt -subj "/CN=$SERVERNAME"
 
 # Start and Enable services
 echo -e "${green}Start and Enable services${reset}"
-sudo systemctl enable --now httpd
-sudo systemctl enable --now mariadb
+systemctl enable --now httpd
+systemctl enable --now mariadb
 
 echo -e "${green}Create a Genaric Virtual host${reset}"
 cat << EOF >> /etc/httpd/conf.d/mediawiki.conf
 <VirtualHost *:80>
   ServerName $SERVERNAME
+  ServerAdmin $CERTMAIL
   DocumentRoot /var/www/html/mediawiki
-  <directory /var/www/html/mediawiki>
+  ErrorLog "/var/log/httpd/mediawiki_error_log"
+  CustomLog "/var/log/httpd/mediawiki_access_log" combined
+  RewriteEngine on
+  RewriteCond %{SERVER_NAME} =$SERVERNAME
+  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+
+<VirtualHost *:443>
+  ServerName $SERVERNAME
+  ServerAdmin $CERTMAIL
+  DocumentRoot /var/www/html/mediawiki
+  ErrorLog "/var/log/httpd/mediawiki_error_ssl.log"
+  CustomLog "/var/log/httpd/mediawiki_access_ssl.log" combined
+  SSLEngine on
+  SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+  SSLCipherSuite HIGH:!aNULL:!MD5
+  SSLHonorCipherOrder on
+  SSLCertificateFile "/etc/pki/tls/certs/apache-selfsigned.crt"
+  SSLCertificateKeyFile "/etc/pki/tls/private/apache-selfsigned.key"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set Content-Security-Policy "default-src 'self';"
+  Header always append X-Frame-Options SAMEORIGIN
+  <Directory /var/www/html/mediawiki>
     Require all granted
-    AllowOverride All
+    AllowOverride None
     Options FollowSymLinks MultiViews
     SetEnv HOME /var/www/html/mediawiki
     SetEnv HTTP_HOME /var/www/html/mediawiki
-  </directory>
+  </Directory>
 </VirtualHost>
 EOF
 
 #Restart httpd 
 echo -e "${green}Restart Apache${reset}"
-sudo systemctl restart httpd.service
+systemctl restart httpd.service
 
 # Setup SQL
 echo -e "${green}Setting up DB\User\Password for MediaWiki${reset}"
@@ -154,30 +182,33 @@ mysql -u root < /tmp/setup.sql
 # Download and install MediaWiki
 echo -e "${green}Download and install MediaWiki${reset}"
 #wget https://releases.wikimedia.org/mediawiki/1.38/mediawiki-1.38.4.zip -P /tmp/ 
-sudo wget https://releases.wikimedia.org/mediawiki/1.39/mediawiki-1.39.0-rc.1.zip  -P /tmp/
-sudo unzip /tmp/mediawiki-*.zip -d /var/www/html && mv /var/www/html/mediawiki-* /var/www/html/mediawiki
+wget https://releases.wikimedia.org/mediawiki/1.39/mediawiki-1.39.0-rc.1.zip  -P /tmp/
+unzip /tmp/mediawiki-*.zip -d /var/www/html && mv /var/www/html/mediawiki-* /var/www/html/mediawiki
 
 # Set permisions
-sudo chown -R apache:apache /var/www/html/mediawiki
-sudo chmod 755 /var/www/html/mediawiki
+chown -R apache:apache /var/www/html/mediawiki
+chmod 755 /var/www/html/mediawiki
 
 # Selinux 
-sudo sudo restorecon -FR /var/www/html/mediawiki/
+restorecon -FR /var/www/html/mediawiki/
 
 # Restart Services
-sudo systemctl restart httpd
+systemctl restart httpd
 clear
 
 # Manual work
 echo -e "${red}To Finish Install ${reset}"
 echo -e "${red}=====================${reset}"
 echo -e "${green}Open an internet browser${reset}"
-echo -e "${green}HTTP://<HOST-IP>${reset}"
+echo -e "${green}HTTPS://<HOST-IP>${reset}"
 echo ""
 echo -e "${green}DataBase Name: $DBNAME${reset}"
 echo -e "${green}DB User: $USER${reset}"
 echo -e "${green}Password:" $(cat /tmp/.APPPASSWORD) "${reset}"
-echo -e "${green}Admin Email: $APPMAIL${reset}"
+echo ""
+echo -e "${green}Copy LocalSettings.php to this location${reset}"
+echo -e "${green}/var/www/html/mediawiki${reset}"
+echo -e "${red}Don't forget to fix the file permissions, if needed${reset}"
 echo ""
 echo ""
 echo -e "${red}Don't Forget to Clean the TMP${reset}"
@@ -186,11 +217,6 @@ echo -e "${red}.MARIADBPASSWORD${reset}"
 echo -e "${red}setup.sql${reset}"
 
 
-# certbot --apache --agree-tos --redirect --uir --hsts --staple-ocsp --must-staple -d $SERVERNAME --email $CERTMAIL
-
-
-# Disable reading by anonymous users
-#$wgGroupPermissions['*']['read'] = false;
 
 
 

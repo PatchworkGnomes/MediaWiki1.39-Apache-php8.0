@@ -37,7 +37,7 @@ The last line on the Script enables CertBot to create the SSL cert for the site.
 
 Email for Certbot that will notify when the Cert is expiring. Doesn't have to be real, but recommend
 </br>
-<b>CERTMAIL=your@email.com</b>
+<b>CERTMAIL=your @ email.com</b>
  
 ### DB STUFF
 This is the name of the database that will create for nextcloud
@@ -51,7 +51,7 @@ This is the username that is needed for the MediaWiki database.
 Email for MediaWiki Admin account</br>
 Doesn't have to be real, but recommend
 </br>
-<b>APPMAIL=your@email.com</b>
+<b>APPMAIL=your @ email.com</b>
 
 ### PASSWORD STUFF
 This generates a random password for the root account of mariadb. You can change it if you wish
@@ -76,7 +76,7 @@ When the script is done running it will remind you that there are passwords and 
 
 ## Final Installation
 When the script is done running, you will see in the terminal the information to finish the installation.</br>
-When you goto <b>http://ip</b> you should see something like this:</br>
+When you goto <b>https://ip</b> you should see something like this:</br>
 <p align="center">
   <img src="images/Mediawiki(step-01).png" >
 </p>
