@@ -12,7 +12,7 @@ Quote by Ram Dass: (or << Backtrack)<br />
 “The quieter you become, the more you can hear.”
 
 ## Dependencies
-
+<p style="color:red;"><b>Using Red Hat DISA-STIG security profile</b></p>
 Keep in mind of Internal and External DNS and rules on your routers\firewalls, assuming you want this to be public.
 Also note that the versions may be different, based on when you install
 * MediaWiki 1.39
